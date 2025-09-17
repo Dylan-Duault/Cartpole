@@ -2,6 +2,8 @@
 
 AI learns to balance a pole on a cart using Deep Q-Network (DQN).
 
+![CartPole Game](docs/cartpole.png)
+
 ## Setup
 ```bash
 python3 -m venv cartpole_env
@@ -27,6 +29,14 @@ python train.py
 python evaluate.py
 ```
 Press LEFT/RIGHT to override AI decisions.
+
+## Training Results
+
+The AI learns to balance the pole in ~300-700 episodes. Training generates:
+- `training_results.png` - Score and loss plots
+- `dqn_model_final.pth` - Trained model
+
+Target: Average score of 195+ over 100 episodes.
 
 ## Files
 - `cartpole.py` - Game environment
