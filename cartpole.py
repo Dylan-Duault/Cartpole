@@ -22,7 +22,7 @@ class CartPole:
         self.pole_angular_velocity = 0.0
 
         # Boundaries
-        self.x_threshold = 20.0
+        self.x_threshold = 2.4
         self.angle_threshold = math.pi / 3  # 60 degrees
 
         # Pygame setup
@@ -44,9 +44,9 @@ class CartPole:
 
     def reset(self):
         """Reset the environment to initial state"""
-        self.cart_position = np.random.uniform(-0.05, 0.05)
-        self.cart_velocity = np.random.uniform(-0.05, 0.05)
-        self.pole_angle = np.random.uniform(-0.05, 0.05)
+        self.cart_position = np.random.uniform(-1.0, 1.0)
+        self.cart_velocity = np.random.uniform(-2.0, 2.0)
+        self.pole_angle = np.random.uniform(-0.30, 0.30)
         self.pole_angular_velocity = np.random.uniform(-0.05, 0.05)
         return self.get_state()
 
@@ -154,7 +154,7 @@ class CartPole:
             self.screen.blit(done_text, (self.width//2 - 100, 50))
 
         pygame.display.flip()
-        self.clock.tick(20)
+        self.clock.tick(30)
 
     def close(self):
         """Clean up pygame"""
